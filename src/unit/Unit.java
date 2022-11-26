@@ -6,14 +6,23 @@ public abstract class Unit {
     private int positionX;
     private int positionY;
     private String teamName;
+    private int unitScore;
 
-    public Unit(String name, int positionX, int positionY, String teamName) {
+
+    public Unit(String name, int positionX, int positionY, String teamName, int unitScore) {
         this.name = name;
         this.positionX = positionX;
         this.positionY = positionY;
         this.teamName = teamName;
+        this.unitScore = unitScore;
     }
 
+    public int getUnitScore() {
+        return unitScore;
+    }
+    public void setUnitScore(int unitScore) {
+        this.unitScore = unitScore;
+    }
     public String getTeamName() {
         return teamName;
     }
