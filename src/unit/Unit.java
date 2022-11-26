@@ -43,6 +43,6 @@ public abstract class Unit {
     public abstract boolean move(int moveToX, int moveToY);
 
     public boolean isInBoard(int moveToX, int moveToY) {
-        return (moveToX < 0) || (moveToX >= Board.BOARD_WIDTH) || (moveToY < 0) || (moveToY >= Board.BOARD_HEIGHT);
+        return (moveToX < 0) || (moveToX >= Board.BOARD_HEIGHT) || (moveToY < 0) || (moveToY >= Board.BOARD_WIDTH);
     }
 }
