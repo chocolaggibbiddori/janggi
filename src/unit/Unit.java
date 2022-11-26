@@ -42,7 +42,8 @@ public abstract class Unit {
 
     public abstract boolean move(int moveToX, int moveToY);
 
-    public boolean isInBoard(int moveToX, int moveToY) {
+    // TODO 다른 클래스로 이동할 것
+    public boolean isMoveToInBoard(int moveToX, int moveToY) {
         return (moveToX < 0) || (moveToX >= Board.BOARD_HEIGHT) || (moveToY < 0) || (moveToY >= Board.BOARD_WIDTH);
     }
 }
