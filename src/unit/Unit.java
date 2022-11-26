@@ -48,6 +48,5 @@ public abstract class Unit {
         this.positionY = positionY;
     }
 
-    public abstract void move();
-    public abstract void remove();
+    public abstract void move(int moveToX, int moveToY);
 }
