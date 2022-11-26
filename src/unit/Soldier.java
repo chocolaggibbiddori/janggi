@@ -1,6 +1,7 @@
 package unit;
 
 import board.Board;
+import rule.Score;
 
 public class Soldier extends Unit {
 
@@ -8,7 +9,7 @@ public class Soldier extends Unit {
     int forwardDirect = isGreen ? -1 : 1;
 
     public Soldier(int positionX, int positionY, String teamName) {
-        super("soldier", positionX, positionY, teamName, 2);
+        super("soldier", positionX, positionY, teamName, Score.soldierScore);
     }
 
     @Override
