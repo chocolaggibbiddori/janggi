@@ -41,8 +41,6 @@ public abstract class Unit {
     }
 
     public abstract void move(int moveToX, int moveToY);
-    protected abstract void moveGreenTeam(int moveToX, int moveToY);
-    protected abstract void moveRedTeam (int moveToX, int moveToY);
 
     public boolean isInBoard(int moveToX, int moveToY) {
         if (moveToX < 0 || moveToX > Board.BOARD_WIDTH) {
