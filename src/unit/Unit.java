@@ -40,13 +40,12 @@ public abstract class Unit {
         this.positionY = positionY;
     }
 
-    public abstract void move(int moveToX, int moveToY);
+    public abstract boolean move(int moveToX, int moveToY);
 
     public boolean isInBoard(int moveToX, int moveToY) {
         if (moveToX < 0 || moveToX > Board.BOARD_WIDTH) {
             return false;
-        }
-        if (moveToY < 0 || moveToY > Board.BOARD_HEIGHT) {
+        } else if (moveToY < 0 || moveToY > Board.BOARD_HEIGHT) {
             return false;
         }
 
