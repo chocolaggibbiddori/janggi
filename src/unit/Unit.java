@@ -2,12 +2,11 @@ package unit;
 
 public abstract class Unit {
 
-    private String name;
+    private final String name;
     private int positionX;
     private int positionY;
-    private String teamName;
-    private int unitScore;
-
+    private final String teamName;
+    private final int unitScore;
 
     public Unit(String name, int positionX, int positionY, String teamName, int unitScore) {
         this.name = name;
@@ -20,20 +19,11 @@ public abstract class Unit {
     public int getUnitScore() {
         return unitScore;
     }
-    public void setUnitScore(int unitScore) {
-        this.unitScore = unitScore;
-    }
     public String getTeamName() {
         return teamName;
     }
-    public void setTeamName(String teamName) {
-        this.teamName = teamName;
-    }
     public String getName() {
         return name;
-    }
-    public void setName(String name) {
-        this.name = name;
     }
     public int getPositionX() {
         return positionX;
