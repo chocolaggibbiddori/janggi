@@ -35,7 +35,7 @@ public class Board {
 
     private Board() {}
 
-    public Board getInstance() {
+    public static Board getInstance() {
         if (board == null) {
             board = new Board();
         }
