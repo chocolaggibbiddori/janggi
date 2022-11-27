@@ -34,13 +34,13 @@ public class Horse extends Unit {
         int yDiff = positionY - moveToY;
 
         if (xDiff == 2) {
-            return board.boardArray[positionX + 1][positionY] != null;
-        } else if (xDiff == -2) {
             return board.boardArray[positionX - 1][positionY] != null;
+        } else if (xDiff == -2) {
+            return board.boardArray[positionX + 1][positionY] != null;
         } else if (yDiff == 2) {
-            return board.boardArray[positionX][positionY + 1] != null;
-        } else if (yDiff == -2) {
             return board.boardArray[positionX][positionY - 1] != null;
+        } else if (yDiff == -2) {
+            return board.boardArray[positionX][positionY + 1] != null;
         }
 
         return false;
