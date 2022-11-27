@@ -10,18 +10,18 @@ public class Scholar extends Unit{
     }
 
     @Override
-    protected boolean isPossible(int moveToX, int moveToY, int positionX, int positionY) {
-        if (isAbleToMoveNEWS(moveToX, moveToY, positionX, positionY)) {
+    protected boolean isPossible(int moveToX, int moveToY) {
+        if (isAbleToMoveNEWS(moveToX, moveToY)) {
             return true;
-        } else if (isAbleToMoveDiagonal(moveToX, moveToY, positionX, positionY)) {
+        } else if (isAbleToMoveDiagonal(moveToX, moveToY)) {
             return true;
         }
 
         return false;
     }
 
-    private boolean isAbleToMoveNEWS(int moveToX, int moveToY, int positionX, int positionY) {
-        if (checkInPalaceWithFourPoint(moveToX, moveToY, positionX, positionY)) {
+    private boolean isAbleToMoveNEWS(int moveToX, int moveToY) {
+        if (checkInPalaceWithFourPoint(moveToX, moveToY)) {
             return false;
         }
 
@@ -34,7 +34,7 @@ public class Scholar extends Unit{
         return false;
     }
 
-    private boolean checkInPalaceWithFourPoint(int moveToX, int moveToY, int positionX, int positionY) {
+    private boolean checkInPalaceWithFourPoint(int moveToX, int moveToY) {
         if (!isInPalace(positionX, positionY)) {
             return true;
         }
@@ -44,27 +44,27 @@ public class Scholar extends Unit{
         return false;
     }
 
-    private boolean isInPalace(int positionX, int positionY) {
+    private boolean isInPalace(int pointX, int pointY) {
         if (isGreen) {
-            return (positionX >= Board.H && positionX <= Board.J) && (positionY >= Board.N && positionY <= Board.P);
+            return (pointX >= Board.H && pointX <= Board.J) && (pointY >= Board.N && pointY <= Board.P);
         } else {
-            return (positionX >= Board.A && positionX <= Board.C) && (positionY >= Board.N && positionY <= Board.P);
+            return (pointX >= Board.A && pointX <= Board.C) && (pointY >= Board.N && pointY <= Board.P);
         }
     }
 
-    private boolean isAbleToMoveDiagonal(int moveToX, int moveToY, int positionX, int positionY) {
-        if (checkInPalaceWithFourPoint(moveToX, moveToY, positionX, positionY)) {
+    private boolean isAbleToMoveDiagonal(int moveToX, int moveToY) {
+        if (checkInPalaceWithFourPoint(moveToX, moveToY)) {
             return false;
         }
 
         return isCenterOfPalace(moveToX, moveToY) || isCenterOfPalace(positionX, positionY);
     }
 
-    private boolean isCenterOfPalace(int positionX, int positionY) {
+    private boolean isCenterOfPalace(int pointX, int pointY) {
         if (isGreen) {
-            return positionX == Board.I && positionY == Board.O;
+            return pointX == Board.I && pointY == Board.O;
         } else {
-            return positionX == Board.B && positionY == Board.O;
+            return pointX == Board.B && pointY == Board.O;
         }
     }
 }

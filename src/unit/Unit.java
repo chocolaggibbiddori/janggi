@@ -4,11 +4,11 @@ import board.Board;
 
 public abstract class Unit {
 
-    private final String name;
-    private int positionX;
-    private int positionY;
-    private final String teamName;
-    private final int unitScore;
+    protected final String name;
+    protected int positionX;
+    protected int positionY;
+    protected final String teamName;
+    protected final int unitScore;
     protected final boolean isGreen;
 
     public Unit(String name, int positionX, int positionY, String teamName, int unitScore) {
@@ -48,7 +48,7 @@ public abstract class Unit {
     }
 
     public boolean move(int moveToX, int moveToY) {
-        if (isPossible(moveToX, moveToY, positionX, positionY)) {
+        if (isPossible(moveToX, moveToY)) {
             setPositionX(moveToX);
             setPositionY(moveToY);
             return true;
@@ -57,7 +57,7 @@ public abstract class Unit {
         return false;
     }
 
-    protected abstract boolean isPossible(int moveToX, int moveToY, int positionX, int positionY);
+    protected abstract boolean isPossible(int moveToX, int moveToY);
 
     // TODO 다른 클래스로 이동할 것
     public boolean isMoveToInBoard(int moveToX, int moveToY) {

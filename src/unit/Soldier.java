@@ -12,27 +12,27 @@ public class Soldier extends Unit {
     }
 
     @Override
-    protected boolean isPossible(int moveToX, int moveToY, int positionX, int positionY) {
-        if (isAbleToMoveForward(moveToX, moveToY, positionX, positionY)) {
+    protected boolean isPossible(int moveToX, int moveToY) {
+        if (isAbleToMoveForward(moveToX, moveToY)) {
             return true;
-        } else if (isAbleToMoveSide(moveToX, moveToY, positionX, positionY)) {
+        } else if (isAbleToMoveSide(moveToX, moveToY)) {
             return true;
-        } else if (isAbleToMoveDiagonal(moveToX, moveToY, positionX, positionY)) {
+        } else if (isAbleToMoveDiagonal(moveToX, moveToY)) {
             return true;
         }
 
         return false;
     }
 
-    private boolean isAbleToMoveForward(int moveToX, int moveToY, int positionX, int positionY) {
+    private boolean isAbleToMoveForward(int moveToX, int moveToY) {
         return positionX + forwardDirect == moveToX && positionY == moveToY;
     }
 
-    private boolean isAbleToMoveSide(int moveToX, int moveToY, int positionX, int positionY) {
+    private boolean isAbleToMoveSide(int moveToX, int moveToY) {
         return positionX == moveToX && (positionY - 1 == moveToY || positionY + 1 == moveToY);
     }
 
-    private boolean isAbleToMoveDiagonal(int moveToX, int moveToY, int positionX, int positionY) {
+    private boolean isAbleToMoveDiagonal(int moveToX, int moveToY) {
         if (!isInPalace(positionX, positionY)) {
             return false;
         }
@@ -57,11 +57,11 @@ public class Soldier extends Unit {
         return false;
     }
 
-    private boolean isInPalace(int positionX, int positionY) {
+    private boolean isInPalace(int pointX, int pointY) {
         if (isGreen) {
-            return (positionX >= Board.H && positionX <= Board.J) && (positionY >= Board.N && positionY <= Board.P);
+            return (pointX >= Board.H && pointX <= Board.J) && (pointY >= Board.N && pointY <= Board.P);
         } else {
-            return (positionX >= Board.A && positionX <= Board.C) && (positionY >= Board.N && positionY <= Board.P);
+            return (pointX >= Board.A && pointX <= Board.C) && (pointY >= Board.N && pointY <= Board.P);
         }
     }
 }
