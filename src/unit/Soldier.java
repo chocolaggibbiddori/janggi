@@ -60,9 +60,9 @@ public class Soldier extends Unit {
 
     private boolean isInPalace(int positionX, int positionY) {
         if (isGreen) {
-            return (positionX >= Board.A && positionX <= Board.C) && (positionY >= Board.N && positionY <= Board.P);
-        } else {
             return (positionX >= Board.H && positionX <= Board.J) && (positionY >= Board.N && positionY <= Board.P);
+        } else {
+            return (positionX >= Board.A && positionX <= Board.C) && (positionY >= Board.N && positionY <= Board.P);
         }
     }
 }
