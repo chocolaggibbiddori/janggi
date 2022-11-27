@@ -40,6 +40,11 @@ public abstract class Unit {
         this.positionY = positionY;
     }
 
+    @Override
+    public String toString() {
+        return "(" + positionX + ", " + positionY + ")";
+    }
+
     public boolean move(int moveToX, int moveToY) {
         int positionX = getPositionX();
         int positionY = getPositionY();
