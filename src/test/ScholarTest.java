@@ -15,7 +15,7 @@ class ScholarTest {
 
     @BeforeEach
     void beforeEach() {
-        scholar = new Scholar(Board.H, Board.N, Board.TEAM_GREEN);
+        scholar = new Scholar(Board.C, Board.N, Board.TEAM_RED);
         System.out.println("------------------");
         System.out.println("scholar = " + scholar);
     }
@@ -27,17 +27,17 @@ class ScholarTest {
 
     @Test
     void scholarSuccessTest() {
-        assertTrue(scholar.move(Board.H, Board.O));
-        assertTrue(scholar.move(Board.I, Board.O));
-        assertTrue(scholar.move(Board.J, Board.N));
-        assertTrue(scholar.move(Board.I, Board.O));
+        assertTrue(scholar.move(Board.C, Board.O));
+        assertTrue(scholar.move(Board.B, Board.O));
+        assertTrue(scholar.move(Board.A, Board.N));
+        assertTrue(scholar.move(Board.B, Board.O));
     }
 
     @Test
     void scholarFailTest() {
-        assertFalse(scholar.move(Board.H, Board.M));
-        assertFalse(scholar.move(Board.G, Board.N));
-        assertFalse(scholar.move(Board.J, Board.P));
-        assertFalse(scholar.move(Board.J, Board.N));
+        assertFalse(scholar.move(Board.C, Board.M));
+        assertFalse(scholar.move(Board.D, Board.N));
+        assertFalse(scholar.move(Board.A, Board.P));
+        assertFalse(scholar.move(Board.A, Board.N));
     }
 }
