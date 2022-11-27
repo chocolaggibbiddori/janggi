@@ -13,20 +13,7 @@ public class Soldier extends Unit {
     }
 
     @Override
-    public boolean move(int moveToX, int moveToY) {
-        int positionX = getPositionX();
-        int positionY = getPositionY();
-
-        if (isPossible(moveToX, moveToY, positionX, positionY)) {
-            setPositionX(moveToX);
-            setPositionY(moveToY);
-            return true;
-        }
-
-        return false;
-    }
-
-    private boolean isPossible(int moveToX, int moveToY, int positionX, int positionY) {
+    protected boolean isPossible(int moveToX, int moveToY, int positionX, int positionY) {
         if (isAbleToMoveForward(moveToX, moveToY, positionX, positionY)) {
             return true;
         } else if (isAbleToMoveSide(moveToX, moveToY, positionX, positionY)) {
