@@ -2,10 +2,12 @@ package test;
 
 import board.Board;
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import unit.Scholar;
+
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class ScholarTest {
 
@@ -25,17 +27,17 @@ class ScholarTest {
 
     @Test
     void scholarSuccessTest() {
-        Assertions.assertTrue(scholar.move(Board.H, Board.O));
-        Assertions.assertTrue(scholar.move(Board.I, Board.O));
-        Assertions.assertTrue(scholar.move(Board.J, Board.N));
-        Assertions.assertTrue(scholar.move(Board.I, Board.O));
+        assertTrue(scholar.move(Board.H, Board.O));
+        assertTrue(scholar.move(Board.I, Board.O));
+        assertTrue(scholar.move(Board.J, Board.N));
+        assertTrue(scholar.move(Board.I, Board.O));
     }
 
     @Test
     void scholarFailTest() {
-        Assertions.assertFalse(scholar.move(Board.H, Board.M));
-        Assertions.assertFalse(scholar.move(Board.G, Board.N));
-        Assertions.assertFalse(scholar.move(Board.J, Board.P));
-        Assertions.assertFalse(scholar.move(Board.J, Board.N));
+        assertFalse(scholar.move(Board.H, Board.M));
+        assertFalse(scholar.move(Board.G, Board.N));
+        assertFalse(scholar.move(Board.J, Board.P));
+        assertFalse(scholar.move(Board.J, Board.N));
     }
 }
