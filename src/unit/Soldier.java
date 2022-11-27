@@ -5,7 +5,6 @@ import rule.Score;
 
 public class Soldier extends Unit {
 
-    boolean isGreen = getTeamName().equals(Board.TEAM_GREEN);
     int forwardDirect = isGreen ? -1 : 1;
 
     public Soldier(int positionX, int positionY, String teamName) {

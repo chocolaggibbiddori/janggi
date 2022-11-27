@@ -5,8 +5,6 @@ import rule.Score;
 
 public class Scholar extends Unit{
 
-    boolean isGreen = getTeamName().equals(Board.TEAM_GREEN);
-
     public Scholar(int positionX, int positionY, String teamName) {
         super("scholar", positionX, positionY, teamName, Score.SCHOLAR_SCORE);
     }

@@ -9,6 +9,7 @@ public abstract class Unit {
     private int positionY;
     private final String teamName;
     private final int unitScore;
+    protected final boolean isGreen;
 
     public Unit(String name, int positionX, int positionY, String teamName, int unitScore) {
         this.name = name;
@@ -16,6 +17,7 @@ public abstract class Unit {
         this.positionY = positionY;
         this.teamName = teamName;
         this.unitScore = unitScore;
+        isGreen = teamName.equals(Board.TEAM_GREEN);
     }
 
     public int getUnitScore() {

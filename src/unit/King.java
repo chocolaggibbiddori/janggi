@@ -5,7 +5,6 @@ import rule.Score;
 
 public class King extends Unit{
 
-    private final boolean isGreen = getTeamName().equals(Board.TEAM_GREEN);
     public boolean life = true;
 
     public King(int positionX, int positionY, String teamName) {
