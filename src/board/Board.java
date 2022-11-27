@@ -31,7 +31,7 @@ public class Board {
     public static final int R = 7;
     public static final int S = 8;
 
-    public static Unit[][] boardArray = new Unit[BOARD_HEIGHT][BOARD_WIDTH];
+    public Unit[][] boardArray = new Unit[BOARD_HEIGHT][BOARD_WIDTH];
 
     private Board() {}
 
