@@ -40,7 +40,20 @@ public abstract class Unit {
         this.positionY = positionY;
     }
 
-    public abstract boolean move(int moveToX, int moveToY);
+    public boolean move(int moveToX, int moveToY) {
+        int positionX = getPositionX();
+        int positionY = getPositionY();
+
+        if (isPossible(moveToX, moveToY, positionX, positionY)) {
+            setPositionX(moveToX);
+            setPositionY(moveToY);
+            return true;
+        }
+
+        return false;
+    }
+
+    protected abstract boolean isPossible(int moveToX, int moveToY, int positionX, int positionY);
 
     // TODO 다른 클래스로 이동할 것
     public boolean isMoveToInBoard(int moveToX, int moveToY) {
