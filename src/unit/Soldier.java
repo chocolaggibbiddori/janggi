@@ -9,7 +9,7 @@ public class Soldier extends Unit {
     int forwardDirect = isGreen ? -1 : 1;
 
     public Soldier(int positionX, int positionY, String teamName) {
-        super("soldier", positionX, positionY, teamName, Score.soldierScore);
+        super("soldier", positionX, positionY, teamName, Score.SOLDIER_SCORE);
     }
 
     @Override
