@@ -14,10 +14,8 @@ public class Scholar extends Unit{
     @Override
     protected boolean isPossible(int moveToX, int moveToY, int positionX, int positionY) {
         if (isAbleToMoveNEWS(moveToX, moveToY, positionX, positionY)) {
-            System.out.println("aaa");
             return true;
         } else if (isAbleToMoveDiagonal(moveToX, moveToY, positionX, positionY)) {
-            System.out.println("ddd");
             return true;
         }
 
