@@ -48,9 +48,6 @@ public abstract class Unit {
     }
 
     public boolean move(int moveToX, int moveToY) {
-        int positionX = getPositionX();
-        int positionY = getPositionY();
-
         if (isPossible(moveToX, moveToY, positionX, positionY)) {
             setPositionX(moveToX);
             setPositionY(moveToY);
