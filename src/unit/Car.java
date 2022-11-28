@@ -16,7 +16,6 @@ public class Car extends Unit{
 
     @Override
     protected boolean isPossible(int moveToX, int moveToY) {
-        boolean moveDirectIsX;
         int xDiff = moveToX - positionX;
         int yDiff = moveToY - positionY;
         ArrayList<Integer> steps = new ArrayList<>();
@@ -25,13 +24,12 @@ public class Car extends Unit{
             return false;
         }
 
-        moveDirectIsX = (positionX != moveToX);
-        if (moveDirectIsX) {
+        if (positionX != moveToX) {
             addSteps(steps, xDiff);
-            return !isBlocked(positionX, steps, true);
+            return !isBlocked(steps, true);
         } else {
             addSteps(steps, yDiff);
-            return !isBlocked(positionY, steps, false);
+            return !isBlocked(steps, false);
         }
     }
 
@@ -51,21 +49,18 @@ public class Car extends Unit{
         }
     }
 
-    private boolean isBlocked(int start, ArrayList<Integer> steps, boolean moveDirectIsX) {
-        if (moveDirectIsX) {
-            for (int step : steps) {
-                if (board.boardArray[start + step][positionY] != null) {
-                    return true;
-                }
-            }
-        } else {
-            for (int step : steps) {
-                if (board.boardArray[positionX][start + step] != null) {
-                    return true;
-                }
+    private boolean isBlocked(ArrayList<Integer> steps, boolean moveDirectIsX) {
+        for (int step : steps) {
+            boolean isBlock = moveDirectIsX ? isBlockedCheck(step, 0) : isBlockedCheck(0, step);
+            if (isBlock) {
+                return true;
             }
         }
 
         return false;
+    }
+
+    private boolean isBlockedCheck(int xIdx, int yIdx) {
+        return board.boardArray[positionX + xIdx][positionY + yIdx] != null;
     }
 }
