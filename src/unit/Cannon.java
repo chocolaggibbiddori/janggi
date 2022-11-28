@@ -16,7 +16,7 @@ public class Cannon extends Unit {
         int absDiff = Math.abs(diff);
         int hurdleCount = 0;
 
-        if (isOnLine(moveToX, moveToY)) {
+        if (!isOnLine(moveToX, moveToY)) {
             return false;
         }
         if (diff == 0) {
@@ -39,7 +39,7 @@ public class Cannon extends Unit {
     }
 
     private boolean isOnLine(int moveToX, int moveToY) {
-        return positionX != moveToX && positionY != moveToY;
+        return positionX == moveToX || positionY == moveToY;
     }
 
     private boolean isExistHurdle(boolean isOnXLine, int diff) {
@@ -49,6 +49,10 @@ public class Cannon extends Unit {
             xIdx += diff;
         } else {
             yIdx += diff;
+        }
+
+        if (board.boardArray[xIdx][yIdx] instanceof Cannon) {
+            return false;
         }
 
         return board.boardArray[xIdx][yIdx] != null;
