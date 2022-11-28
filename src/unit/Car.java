@@ -1,17 +1,13 @@
 package unit;
 
-import board.Board;
 import rule.Score;
 
 import java.util.ArrayList;
 
 public class Car extends Unit{
 
-    private final Board board;
-
     public Car(int positionX, int positionY, String teamName) {
         super("car", positionX, positionY, teamName, Score.CAR_SCORE);
-        board = Board.getInstance();
     }
 
     @Override

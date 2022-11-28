@@ -1,6 +1,5 @@
 package unit;
 
-import board.Board;
 import rule.Score;
 
 public class Horse extends Unit {
@@ -29,7 +28,6 @@ public class Horse extends Unit {
     }
 
     private boolean isBlocked(int moveToX, int moveToY) {
-        Board board = Board.getInstance();
         int xDiff = positionX - moveToX;
         int yDiff = positionY - moveToY;
 

@@ -10,7 +10,7 @@ public abstract class Unit {
     protected final String teamName;
     protected final int unitScore;
     protected final boolean isGreen;
-    private final Board board = Board.getInstance();
+    protected final Board board = Board.getInstance();
 
     public Unit(String name, int positionX, int positionY, String teamName, int unitScore) {
         this.name = name;
