@@ -28,10 +28,10 @@ public class Car extends Unit{
         moveDirectIsX = (positionX != moveToX);
         if (moveDirectIsX) {
             addSteps(steps, xDiff);
-            return !isBlocked(positionX, moveToX, steps, true);
+            return !isBlocked(positionX, steps, true);
         } else {
             addSteps(steps, yDiff);
-            return !isBlocked(positionY, moveToY, steps, false);
+            return !isBlocked(positionY, steps, false);
         }
     }
 
@@ -51,7 +51,7 @@ public class Car extends Unit{
         }
     }
 
-    private boolean isBlocked(int start, int end, ArrayList<Integer> steps, boolean moveDirectIsX) {
+    private boolean isBlocked(int start, ArrayList<Integer> steps, boolean moveDirectIsX) {
         if (moveDirectIsX) {
             for (int step : steps) {
                 if (board.boardArray[start + step][positionY] != null) {
@@ -60,7 +60,7 @@ public class Car extends Unit{
             }
         } else {
             for (int step : steps) {
-                if (board.boardArray[positionX][end + step] != null) {
+                if (board.boardArray[positionX][start + step] != null) {
                     return true;
                 }
             }
