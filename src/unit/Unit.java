@@ -50,6 +50,7 @@ public abstract class Unit {
 
     public boolean move(int moveToX, int moveToY) {
         if (isPossible(moveToX, moveToY)) {
+            board.boardArray[positionX][positionY] = null;
             setPositionX(moveToX);
             setPositionY(moveToY);
             board.boardArray[positionX][positionY] = this;
