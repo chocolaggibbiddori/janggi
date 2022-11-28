@@ -16,7 +16,7 @@ public class Car extends Unit{
         int yDiff = moveToY - positionY;
         ArrayList<Integer> steps = new ArrayList<>();
 
-        if (isOnLine(moveToX, moveToY)) {
+        if (!isOnLine(moveToX, moveToY)) {
             return false;
         }
 
@@ -30,7 +30,7 @@ public class Car extends Unit{
     }
 
     private boolean isOnLine(int moveToX, int moveToY) {
-        return positionX != moveToX && positionY != moveToY;
+        return positionX == moveToX || positionY == moveToY;
     }
 
     private void addSteps(ArrayList<Integer> steps, int diff) {
