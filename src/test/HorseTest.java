@@ -29,7 +29,7 @@ class HorseTest {
     }
 
     @Test
-    void scholarSuccessTest() {
+    void horseSuccessTest() {
         assertTrue(horse.move(Board.F, Board.O));
         assertTrue(horse.move(Board.E, Board.M));
         assertTrue(horse.move(Board.G, Board.L));
@@ -37,7 +37,7 @@ class HorseTest {
     }
 
     @Test
-    void scholarFailTest() {
+    void horseFailTest() {
         board.boardArray[Board.G][Board.N] = new Soldier(Board.G, Board.N, Board.TEAM_GREEN);
         assertFalse(horse.move(Board.F, Board.O));
         assertFalse(horse.move(Board.E, Board.N));

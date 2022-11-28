@@ -29,7 +29,7 @@ class ElephantTest {
     }
 
     @Test
-    void scholarSuccessTest() {
+    void elephantSuccessTest() {
         assertTrue(elephant.move(Board.G, Board.O));
         assertTrue(elephant.move(Board.D, Board.M));
         assertTrue(elephant.move(Board.F, Board.P));
@@ -37,7 +37,7 @@ class ElephantTest {
     }
 
     @Test
-    void scholarFailTest() {
+    void elephantFailTest() {
         board.boardArray[7][3] = new Horse(7, 3, Board.TEAM_GREEN);
         assertFalse(elephant.move(Board.G, Board.O));
         assertFalse(elephant.move(Board.E, Board.M));
