@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class Car extends Unit{
 
-    Board board;
+    private final Board board;
 
     public Car(int positionX, int positionY, String teamName) {
         super("car", positionX, positionY, teamName, Score.CAR_SCORE);

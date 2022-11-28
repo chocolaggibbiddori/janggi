@@ -5,10 +5,11 @@ import rule.Score;
 
 public class Elephant extends Unit {
 
-    Board board = Board.getInstance();
+    private final Board board;
 
     public Elephant(int positionX, int positionY, String teamName) {
         super("elephant", positionX, positionY, teamName, Score.ELEPHANT_SCORE);
+        board = Board.getInstance();
     }
 
     @Override
