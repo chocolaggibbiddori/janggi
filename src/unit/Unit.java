@@ -24,21 +24,27 @@ public abstract class Unit {
     public int getUnitScore() {
         return unitScore;
     }
+
     public String getTeamName() {
         return teamName;
     }
+
     public String getName() {
         return name;
     }
+
     public int getPositionX() {
         return positionX;
     }
+
     public void setPositionX(int positionX) {
         this.positionX = positionX;
     }
+
     public int getPositionY() {
         return positionY;
     }
+
     public void setPositionY(int positionY) {
         this.positionY = positionY;
     }
@@ -49,15 +55,15 @@ public abstract class Unit {
     }
 
     public boolean move(int moveToX, int moveToY) {
-        if (isPossible(moveToX, moveToY)) {
-            board.boardArray[positionX][positionY] = null;
-            setPositionX(moveToX);
-            setPositionY(moveToY);
-            board.boardArray[positionX][positionY] = this;
-            return true;
+        if (!isPossible(moveToX, moveToY)) {
+            return false;
         }
 
-        return false;
+        board.boardArray[positionX][positionY] = null;
+        setPositionX(moveToX);
+        setPositionY(moveToY);
+        board.boardArray[positionX][positionY] = this;
+        return true;
     }
 
     protected abstract boolean isPossible(int moveToX, int moveToY);
