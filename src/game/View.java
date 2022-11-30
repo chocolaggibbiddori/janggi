@@ -88,6 +88,7 @@ public class View {
             System.out.print("   ");
         }
         System.out.println();
+        System.out.println();
     }
 
     public void drawScore(int greenScore, double redScore) {
