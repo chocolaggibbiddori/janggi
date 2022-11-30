@@ -45,7 +45,7 @@ public abstract class Unit {
 
     @Override
     public String toString() {
-        return "(" + positionX + ", " + positionY + ")";
+        return teamName + ", " + name;
     }
 
     public boolean move(int moveToX, int moveToY) {

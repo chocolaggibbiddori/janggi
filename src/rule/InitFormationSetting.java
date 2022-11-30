@@ -8,6 +8,17 @@ public class InitFormationSetting {
     Board board = Board.getInstance();
     Unit[][] units = board.boardArray;
 
+    @Override
+    public String toString() {
+        for (Unit[] unit : units) {
+            for (Unit unit1 : unit) {
+                System.out.println(unit1);
+            }
+        }
+
+        return "\n";
+    }
+
     public Unit[][] makeFormation(Formation greenFormation, Formation redFormation) {
         makeCommonFormation();
         makeGreenFormation(greenFormation);
