@@ -9,6 +9,9 @@ public class Rule {
     Unit[][] units = Board.getInstance().boardArray;
 
     public boolean isRightInput(String point) {
+        if (point == null) {
+            return false;
+        }
         return isLengthTwo(point) && !isOutOfBoard(point);
     }
 
