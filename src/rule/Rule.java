@@ -8,12 +8,27 @@ public class Rule {
 
     Unit[][] units = Board.getInstance().boardArray;
 
-    public boolean isOutOfBoard(int moveToX, int moveToY) {
-        boolean isOutX = moveToX < Board.A || moveToX > Board.J;
-        boolean isOutY = moveToY < Board.K || moveToY > Board.S;
+    public boolean isRightInput(String point) {
+        return isLengthTwo(point) && !isOutOfBoard(point);
+    }
+
+    public boolean isLengthTwo(String point) {
+        if (point.length() != 2) {
+            System.out.println("올바른 위치를 입력하여 주십시오.");
+            return false;
+        }
+
+        return true;
+    }
+
+    public boolean isOutOfBoard(String point) {
+        char first = point.charAt(0);
+        char second = point.charAt(1);
+        boolean isOutX = first < 'a' || first > 'j';
+        boolean isOutY = second < 'k' || second > 's';
 
         if (isOutX || isOutY) {
-            System.out.println("해당 위치로 이동할 수 없습니다.");
+            System.out.println("보드 바깥 지점입니다.");
             return true;
         }
 

@@ -1,6 +1,8 @@
 package unit;
 
 import board.Board;
+import game.Game;
+import rule.Rule;
 
 public abstract class Unit {
 
@@ -11,6 +13,7 @@ public abstract class Unit {
     protected final int unitScore;
     protected final boolean isGreen;
     protected final Board board = Board.getInstance();
+    private final Rule rule = new Rule();
 
     public Unit(String name, int positionX, int positionY, String teamName, int unitScore) {
         this.name = name;
@@ -56,8 +59,26 @@ public abstract class Unit {
     }
 
     public boolean move(int moveToX, int moveToY) {
-        if (!isPossible(moveToX, moveToY)) {
+        Unit unit = board.boardArray[moveToX][moveToY];
+
+        if (unit != null && unit.getTeamName().equals(this.teamName)) {
+            System.out.println("해당 지점으로 이동할 수 없습니다.");
             return false;
+        }
+        if (!isPossible(moveToX, moveToY)) {
+            System.out.println("해당 지점으로 이동할 수 없습니다.");
+            return false;
+        }
+
+        if (rule.isKingDie(moveToX, moveToY)) {
+            Game.gameOver = true;
+        }
+        if (unit != null) {
+            if (unit.getTeamName().equals(Board.TEAM_GREEN)) {
+                Game.greenScore -= unit.getUnitScore();
+            } else {
+                Game.redScore -= unit.getUnitScore();
+            }
         }
 
         board.boardArray[positionX][positionY] = null;
