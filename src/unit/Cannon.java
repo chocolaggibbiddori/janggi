@@ -1,10 +1,21 @@
 package unit;
 
+import board.Board;
 import rule.Score;
 
 public class Cannon extends Unit {
     public Cannon(int positionX, int positionY, String teamName) {
         super("cannon", positionX, positionY, teamName, Score.CANNON_SCORE);
+    }
+
+    @Override
+    public boolean move(int moveToX, int moveToY) {
+        Board board = Board.getInstance();
+        if (board.boardArray[moveToX][moveToY] instanceof Cannon) {
+            return false;
+        }
+
+        return super.move(moveToX, moveToY);
     }
 
     @Override
