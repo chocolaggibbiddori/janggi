@@ -51,7 +51,8 @@ public abstract class Unit {
 
     @Override
     public String toString() {
-        return teamName + ", " + name;
+        String teamName = (this.teamName.equals(Board.TEAM_GREEN)) ? "G" : "R";
+        return teamName + name.substring(0, 3);
     }
 
     public boolean move(int moveToX, int moveToY) {
