@@ -10,9 +10,11 @@ public class InitFormationSetting {
 
     @Override
     public String toString() {
-        for (Unit[] unit : units) {
-            for (Unit unit1 : unit) {
-                System.out.println(unit1);
+        for (int i = 0; i < units.length; i++) {
+            Unit[] unit = units[i];
+            for (int j = 0; j < unit.length; j++) {
+                Unit unit1 = unit[j];
+                System.out.println("(" + i + ", " + j + ")" + "=" + unit1);
             }
         }
 
@@ -103,30 +105,30 @@ public class InitFormationSetting {
     }
 
     private void makeRedFirstFormation() {
-        units[Board.A][Board.L] = new Elephant(Board.A, Board.L, Board.TEAM_GREEN);
-        units[Board.A][Board.M] = new Horse(Board.A, Board.M, Board.TEAM_GREEN);
-        units[Board.A][Board.Q] = new Elephant(Board.A, Board.Q, Board.TEAM_GREEN);
-        units[Board.A][Board.R] = new Horse(Board.A, Board.R, Board.TEAM_GREEN);
+        units[Board.A][Board.L] = new Elephant(Board.A, Board.L, Board.TEAM_RED);
+        units[Board.A][Board.M] = new Horse(Board.A, Board.M, Board.TEAM_RED);
+        units[Board.A][Board.Q] = new Elephant(Board.A, Board.Q, Board.TEAM_RED);
+        units[Board.A][Board.R] = new Horse(Board.A, Board.R, Board.TEAM_RED);
     }
 
     private void makeRedSecondFormation() {
-        units[Board.A][Board.L] = new Horse(Board.A, Board.L, Board.TEAM_GREEN);
-        units[Board.A][Board.M] = new Elephant(Board.A, Board.M, Board.TEAM_GREEN);
-        units[Board.A][Board.Q] = new Horse(Board.A, Board.Q, Board.TEAM_GREEN);
-        units[Board.A][Board.R] = new Elephant(Board.A, Board.R, Board.TEAM_GREEN);
+        units[Board.A][Board.L] = new Horse(Board.A, Board.L, Board.TEAM_RED);
+        units[Board.A][Board.M] = new Elephant(Board.A, Board.M, Board.TEAM_RED);
+        units[Board.A][Board.Q] = new Horse(Board.A, Board.Q, Board.TEAM_RED);
+        units[Board.A][Board.R] = new Elephant(Board.A, Board.R, Board.TEAM_RED);
     }
 
     private void makeRedThirdFormation() {
-        units[Board.A][Board.L] = new Horse(Board.A, Board.L, Board.TEAM_GREEN);
-        units[Board.A][Board.M] = new Elephant(Board.A, Board.M, Board.TEAM_GREEN);
-        units[Board.A][Board.Q] = new Elephant(Board.A, Board.Q, Board.TEAM_GREEN);
-        units[Board.A][Board.R] = new Horse(Board.A, Board.R, Board.TEAM_GREEN);
+        units[Board.A][Board.L] = new Horse(Board.A, Board.L, Board.TEAM_RED);
+        units[Board.A][Board.M] = new Elephant(Board.A, Board.M, Board.TEAM_RED);
+        units[Board.A][Board.Q] = new Elephant(Board.A, Board.Q, Board.TEAM_RED);
+        units[Board.A][Board.R] = new Horse(Board.A, Board.R, Board.TEAM_RED);
     }
 
     private void makeRedFourthFormation() {
-        units[Board.A][Board.L] = new Elephant(Board.A, Board.L, Board.TEAM_GREEN);
-        units[Board.A][Board.M] = new Horse(Board.A, Board.M, Board.TEAM_GREEN);
-        units[Board.A][Board.Q] = new Horse(Board.A, Board.Q, Board.TEAM_GREEN);
-        units[Board.A][Board.R] = new Elephant(Board.A, Board.R, Board.TEAM_GREEN);
+        units[Board.A][Board.L] = new Elephant(Board.A, Board.L, Board.TEAM_RED);
+        units[Board.A][Board.M] = new Horse(Board.A, Board.M, Board.TEAM_RED);
+        units[Board.A][Board.Q] = new Horse(Board.A, Board.Q, Board.TEAM_RED);
+        units[Board.A][Board.R] = new Elephant(Board.A, Board.R, Board.TEAM_RED);
     }
 }
